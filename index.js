@@ -123,14 +123,19 @@ class Car {
     this.odometer = 0 // car initilizes with zero miles
     this.tank = tankSize // car initiazes full of gas
     // ✨ initialize whatever other properties are needed
+    this.tankSize = tankSize // info that won't change, tank + odometer will change
   }
 
   /**
-   * [Exercise 6B] Car.prototype.drive adds miles to the odometer and consumes fuel according to mpg
+   * [Exercise 6B] Car.prototype.drive adds miles to the odometer 
+   * and consumes fuel according to mpg
    * @param {string} distance - the distance we want the car to drive
    * @returns {number} - the updated odometer value
    *
+   * as odometer goes up, tank goes down 
+   * 
    * EXAMPLE
+   * name, tankSize, mpg
    * const focus = new Car('focus', 20, 30)
    * focus.drive(100) // returns 100
    * focus.drive(100) // returns 200
@@ -139,7 +144,8 @@ class Car {
    * focus.drive(200) // returns 600 (ran out of gas after 100 miles)
    */
   drive(distance) {
-    // ✨ implement
+   this.odometer = this.odometer + distance
+   return this.odometer
   }
 
   /**
