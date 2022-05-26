@@ -124,6 +124,7 @@ class Car {
     this.tank = tankSize // car initiazes full of gas
     // ✨ initialize whatever other properties are needed
     this.tankSize = tankSize // info that won't change, tank + odometer will change
+    this.mpg = mpg
   }
 
   /**
@@ -144,8 +145,16 @@ class Car {
    * focus.drive(200) // returns 600 (ran out of gas after 100 miles)
    */
   drive(distance) {
-   this.odometer = this.odometer + distance
-   return this.odometer
+  const drivableMiles = this.tank * this.mpg
+  if( distance <= drivableMiles ) {
+    this.odometer = this.odometer + distance
+    this.tank = this.tank - ( distance / this.mpg )
+    } else {
+      this.tank = 0
+      this.odometer = this.odometer + drivableMiles
+    }
+    return this.odometer
+
   }
 
   /**

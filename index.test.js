@@ -134,7 +134,12 @@ describe('[Exercise 6] Car', () => {
   })
   
   test('[16] driving the car uses gas', () => {
+    focus.drive(600) // runs out after 600
+    expect(focus.drive(1)).toBe(600)
+    expect(focus.drive(1)).toBe(600)
+    expect(focus.drive(1)).toBe(600) // no matter how many miles more you run fn, you still have miles at 600 (bc tank is empty)
 
+    expect(focus.tank).toBe(0)
   })
 
   test('[17] refueling allows to keep driving', () => {
