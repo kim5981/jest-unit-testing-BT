@@ -180,17 +180,11 @@ class Car {
  * @param {number} number - the number to test for evenness
  * @returns {promise} - resolves true if number even, false otherwise
  *
- * EXAMPLE
- * isEvenNumberAsync(2).then(result => {
- *    // result is true
- * })
- * isEvenNumberAsync(3).then(result => {
- *    // result is false
- * })
+ 
  */
-function isEvenNumberAsync(number) {
-  // ✨ implement
-}
+const isEvenNumberAsync = number => number % 2 === 0 
+? Promise.resolve(true) : Promise.resolve(false) 
+
 
 module.exports = {
   trimProperties,
