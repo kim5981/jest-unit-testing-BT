@@ -17,8 +17,8 @@ function trimProperties(obj) {
 }
 
 const obj = { 
-  name: "   jane   ",
-  lastName: "   doe",
+  name: "   smth   ",
+  lastName: "   cool",
   favColor: "   purple  "
  }
 
