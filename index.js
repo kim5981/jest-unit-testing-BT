@@ -7,22 +7,12 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
-  // const copy = {...obj}
-  // return Object.values(copy).map(value => value.trim()) <-- returns an array
-  return Object.keys(obj).reduce((total, currentAmt) => {
-    total[currentAmt] = obj[currentAmt].trim()
-    return total
+ return Object.keys(obj).reduce((newObj, val) => {
+    newObj[val] = obj[val].trim()
+    return newObj
   }, {})
 }
 
-const obj = { 
-  name: "   smth   ",
-  lastName: "   cool",
-  favColor: "   purple  "
- }
-
-console.log("trimProperties: ", trimProperties(obj))
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
