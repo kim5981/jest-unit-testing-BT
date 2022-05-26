@@ -19,18 +19,18 @@ describe('[Exercise 1] trimProperties', () => {
 
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  // test('[3] returns an object with the properties trimmed', () => {})
-  // test('[4] the object returned is the exact same one we passed in', () => {})
   test("[3] returns an object with the properties trimmed", () => {
       const inputObj = { test1: " test1", test2: " test2   " }
       const expectedObj = { test1: "test1", test2: "test2"}
-      const actual = utils.trimProperties(inputObj)
+      const actual = utils.trimPropertiesMutation(inputObj)
 
       expect(actual).toEqual(expectedObj)
   })
 
   test("[4] the object returned is the exact same one we passed in", () => {
-
+    const inputObj = { test1: " test1", test2: " test2   " }
+    const actual = utils.trimPropertiesMutation(inputObj)
+    expect(inputObj).toBe(actual)
   })
 })
 
